@@ -1,2 +1,2 @@
 # ZJMemoryProfiler
-A memory profiler base on ZJMemoryProfiler.
+A memory profiler base on FBMemoryProfiler.
