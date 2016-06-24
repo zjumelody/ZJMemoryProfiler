@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A71A93E11D1AE81100358F25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A93E01D1AE81100358F25 /* main.m */; };
+		A71A93E41D1AE81100358F25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A93E31D1AE81100358F25 /* AppDelegate.m */; };
+		A71A93E71D1AE81100358F25 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A93E61D1AE81100358F25 /* FirstViewController.m */; };
+		A71A93EC1D1AE81100358F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A93EB1D1AE81100358F25 /* Assets.xcassets */; };
+		A71A93EF1D1AE81100358F25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A93ED1D1AE81100358F25 /* LaunchScreen.storyboard */; };
+		A71A93FA1D1AE81100358F25 /* ZJMemoryProfilerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A93F91D1AE81100358F25 /* ZJMemoryProfilerDemoTests.m */; };
+		A71A94051D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A94041D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.m */; };
+		A71A94151D1AEBB800358F25 /* ZJMemoryProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A94141D1AEBB800358F25 /* ZJMemoryProfiler.m */; };
+		A762A50A1D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A5091D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m */; };
+		A762A50D1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A50C1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m */; };
+		A762A5101D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A50F1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m */; };
+		A762A5131D1BDF5700D3C5A9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A5121D1BDF5700D3C5A9 /* SecondViewController.m */; };
+		A762A5161D1BE2D400D3C5A9 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A5151D1BE2D400D3C5A9 /* ThirdViewController.m */; };
+		BE4D60FEB027746CCF336481 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C536545F7B934A9EABB70693 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A71A93F61D1AE81100358F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A71A93D41D1AE81100358F25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A71A93DB1D1AE81100358F25;
+			remoteInfo = ZJMemoryProfilerDemo;
+		};
+		A71A94011D1AE81100358F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A71A93D41D1AE81100358F25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A71A93DB1D1AE81100358F25;
+			remoteInfo = ZJMemoryProfilerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		043C13C2B5FA0AF1D08796D8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A71A93DC1D1AE81100358F25 /* ZJMemoryProfilerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJMemoryProfilerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71A93E01D1AE81100358F25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A71A93E21D1AE81100358F25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A71A93E31D1AE81100358F25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A71A93E51D1AE81100358F25 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		A71A93E61D1AE81100358F25 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A71A93EB1D1AE81100358F25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A71A93EE1D1AE81100358F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A71A93F01D1AE81100358F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71A93F51D1AE81100358F25 /* ZJMemoryProfilerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJMemoryProfilerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71A93F91D1AE81100358F25 /* ZJMemoryProfilerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerDemoTests.m; sourceTree = "<group>"; };
+		A71A93FB1D1AE81100358F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71A94001D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJMemoryProfilerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71A94041D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerDemoUITests.m; sourceTree = "<group>"; };
+		A71A94061D1AE81100358F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71A94131D1AEBB800358F25 /* ZJMemoryProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfiler.h; sourceTree = "<group>"; };
+		A71A94141D1AEBB800358F25 /* ZJMemoryProfiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfiler.m; sourceTree = "<group>"; };
+		A762A5081D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfilerWindow.h; sourceTree = "<group>"; };
+		A762A5091D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerWindow.m; sourceTree = "<group>"; };
+		A762A50B1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfilerContainerViewController.h; sourceTree = "<group>"; };
+		A762A50C1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerContainerViewController.m; sourceTree = "<group>"; };
+		A762A50E1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfilerFloatingViewController.h; sourceTree = "<group>"; };
+		A762A50F1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerFloatingViewController.m; sourceTree = "<group>"; };
+		A762A5111D1BDF5700D3C5A9 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		A762A5121D1BDF5700D3C5A9 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		A762A5141D1BE2D400D3C5A9 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		A762A5151D1BE2D400D3C5A9 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		BB829C83EAC151A40B9B5B0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C536545F7B934A9EABB70693 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A71A93D91D1AE81100358F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4D60FEB027746CCF336481 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71A93F21D1AE81100358F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71A93FD1D1AE81100358F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D6A438B84AC7D2C5C23B3C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				043C13C2B5FA0AF1D08796D8 /* Pods.debug.xcconfig */,
+				BB829C83EAC151A40B9B5B0F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5AC4A15D51B45E115FD74524 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C536545F7B934A9EABB70693 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A71A93D31D1AE81100358F25 = {
+			isa = PBXGroup;
+			children = (
+				A71A93DE1D1AE81100358F25 /* ZJMemoryProfilerDemo */,
+				A71A93F81D1AE81100358F25 /* ZJMemoryProfilerDemoTests */,
+				A71A94031D1AE81100358F25 /* ZJMemoryProfilerDemoUITests */,
+				A71A93DD1D1AE81100358F25 /* Products */,
+				2D6A438B84AC7D2C5C23B3C3 /* Pods */,
+				5AC4A15D51B45E115FD74524 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A71A93DD1D1AE81100358F25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A71A93DC1D1AE81100358F25 /* ZJMemoryProfilerDemo.app */,
+				A71A93F51D1AE81100358F25 /* ZJMemoryProfilerDemoTests.xctest */,
+				A71A94001D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A71A93DE1D1AE81100358F25 /* ZJMemoryProfilerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A71A93E21D1AE81100358F25 /* AppDelegate.h */,
+				A71A93E31D1AE81100358F25 /* AppDelegate.m */,
+				A71A93E51D1AE81100358F25 /* FirstViewController.h */,
+				A71A93E61D1AE81100358F25 /* FirstViewController.m */,
+				A762A5111D1BDF5700D3C5A9 /* SecondViewController.h */,
+				A762A5121D1BDF5700D3C5A9 /* SecondViewController.m */,
+				A762A5141D1BE2D400D3C5A9 /* ThirdViewController.h */,
+				A762A5151D1BE2D400D3C5A9 /* ThirdViewController.m */,
+				A71A93EB1D1AE81100358F25 /* Assets.xcassets */,
+				A71A93ED1D1AE81100358F25 /* LaunchScreen.storyboard */,
+				A71A93F01D1AE81100358F25 /* Info.plist */,
+				A71A93DF1D1AE81100358F25 /* Supporting Files */,
+				A71A94121D1AEBAA00358F25 /* ZJMemoryProfiler */,
+			);
+			path = ZJMemoryProfilerDemo;
+			sourceTree = "<group>";
+		};
+		A71A93DF1D1AE81100358F25 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A71A93E01D1AE81100358F25 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A71A93F81D1AE81100358F25 /* ZJMemoryProfilerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A71A93F91D1AE81100358F25 /* ZJMemoryProfilerDemoTests.m */,
+				A71A93FB1D1AE81100358F25 /* Info.plist */,
+			);
+			path = ZJMemoryProfilerDemoTests;
+			sourceTree = "<group>";
+		};
+		A71A94031D1AE81100358F25 /* ZJMemoryProfilerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A71A94041D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.m */,
+				A71A94061D1AE81100358F25 /* Info.plist */,
+			);
+			path = ZJMemoryProfilerDemoUITests;
+			sourceTree = "<group>";
+		};
+		A71A94121D1AEBAA00358F25 /* ZJMemoryProfiler */ = {
+			isa = PBXGroup;
+			children = (
+				A71A94131D1AEBB800358F25 /* ZJMemoryProfiler.h */,
+				A71A94141D1AEBB800358F25 /* ZJMemoryProfiler.m */,
+				A762A5081D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.h */,
+				A762A5091D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m */,
+				A762A50B1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.h */,
+				A762A50C1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m */,
+				A762A50E1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.h */,
+				A762A50F1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m */,
+			);
+			name = ZJMemoryProfiler;
+			path = ../../ZJMemoryProfiler;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A71A93DB1D1AE81100358F25 /* ZJMemoryProfilerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A71A94091D1AE81100358F25 /* Build configuration list for PBXNativeTarget "ZJMemoryProfilerDemo" */;
+			buildPhases = (
+				63793D584BF6C6D4361A5C4D /* Check Pods Manifest.lock */,
+				A71A93D81D1AE81100358F25 /* Sources */,
+				A71A93D91D1AE81100358F25 /* Frameworks */,
+				A71A93DA1D1AE81100358F25 /* Resources */,
+				5BEFC315D2DF4B36DB0AA312 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZJMemoryProfilerDemo;
+			productName = ZJMemoryProfilerDemo;
+			productReference = A71A93DC1D1AE81100358F25 /* ZJMemoryProfilerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A71A93F41D1AE81100358F25 /* ZJMemoryProfilerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A71A940C1D1AE81100358F25 /* Build configuration list for PBXNativeTarget "ZJMemoryProfilerDemoTests" */;
+			buildPhases = (
+				A71A93F11D1AE81100358F25 /* Sources */,
+				A71A93F21D1AE81100358F25 /* Frameworks */,
+				A71A93F31D1AE81100358F25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A71A93F71D1AE81100358F25 /* PBXTargetDependency */,
+			);
+			name = ZJMemoryProfilerDemoTests;
+			productName = ZJMemoryProfilerDemoTests;
+			productReference = A71A93F51D1AE81100358F25 /* ZJMemoryProfilerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A71A93FF1D1AE81100358F25 /* ZJMemoryProfilerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A71A940F1D1AE81100358F25 /* Build configuration list for PBXNativeTarget "ZJMemoryProfilerDemoUITests" */;
+			buildPhases = (
+				A71A93FC1D1AE81100358F25 /* Sources */,
+				A71A93FD1D1AE81100358F25 /* Frameworks */,
+				A71A93FE1D1AE81100358F25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A71A94021D1AE81100358F25 /* PBXTargetDependency */,
+			);
+			name = ZJMemoryProfilerDemoUITests;
+			productName = ZJMemoryProfilerDemoUITests;
+			productReference = A71A94001D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A71A93D41D1AE81100358F25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Melody;
+				TargetAttributes = {
+					A71A93DB1D1AE81100358F25 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					A71A93F41D1AE81100358F25 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = A71A93DB1D1AE81100358F25;
+					};
+					A71A93FF1D1AE81100358F25 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = A71A93DB1D1AE81100358F25;
+					};
+				};
+			};
+			buildConfigurationList = A71A93D71D1AE81100358F25 /* Build configuration list for PBXProject "ZJMemoryProfilerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A71A93D31D1AE81100358F25;
+			productRefGroup = A71A93DD1D1AE81100358F25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A71A93DB1D1AE81100358F25 /* ZJMemoryProfilerDemo */,
+				A71A93F41D1AE81100358F25 /* ZJMemoryProfilerDemoTests */,
+				A71A93FF1D1AE81100358F25 /* ZJMemoryProfilerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A71A93DA1D1AE81100358F25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71A93EF1D1AE81100358F25 /* LaunchScreen.storyboard in Resources */,
+				A71A93EC1D1AE81100358F25 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71A93F31D1AE81100358F25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71A93FE1D1AE81100358F25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5BEFC315D2DF4B36DB0AA312 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63793D584BF6C6D4361A5C4D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A71A93D81D1AE81100358F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71A93E71D1AE81100358F25 /* FirstViewController.m in Sources */,
+				A71A94151D1AEBB800358F25 /* ZJMemoryProfiler.m in Sources */,
+				A762A50D1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m in Sources */,
+				A762A50A1D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m in Sources */,
+				A762A5131D1BDF5700D3C5A9 /* SecondViewController.m in Sources */,
+				A762A5161D1BE2D400D3C5A9 /* ThirdViewController.m in Sources */,
+				A71A93E41D1AE81100358F25 /* AppDelegate.m in Sources */,
+				A762A5101D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m in Sources */,
+				A71A93E11D1AE81100358F25 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71A93F11D1AE81100358F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71A93FA1D1AE81100358F25 /* ZJMemoryProfilerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71A93FC1D1AE81100358F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71A94051D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A71A93F71D1AE81100358F25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A71A93DB1D1AE81100358F25 /* ZJMemoryProfilerDemo */;
+			targetProxy = A71A93F61D1AE81100358F25 /* PBXContainerItemProxy */;
+		};
+		A71A94021D1AE81100358F25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A71A93DB1D1AE81100358F25 /* ZJMemoryProfilerDemo */;
+			targetProxy = A71A94011D1AE81100358F25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A71A93ED1D1AE81100358F25 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A71A93EE1D1AE81100358F25 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A71A94071D1AE81100358F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A71A94081D1AE81100358F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A71A940A1D1AE81100358F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 043C13C2B5FA0AF1D08796D8 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ZJMemoryProfilerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.melody.ZJMemoryProfilerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A71A940B1D1AE81100358F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB829C83EAC151A40B9B5B0F /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ZJMemoryProfilerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.melody.ZJMemoryProfilerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A71A940D1D1AE81100358F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZJMemoryProfilerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.melody.ZJMemoryProfilerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJMemoryProfilerDemo.app/ZJMemoryProfilerDemo";
+			};
+			name = Debug;
+		};
+		A71A940E1D1AE81100358F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZJMemoryProfilerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.melody.ZJMemoryProfilerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJMemoryProfilerDemo.app/ZJMemoryProfilerDemo";
+			};
+			name = Release;
+		};
+		A71A94101D1AE81100358F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZJMemoryProfilerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.melody.ZJMemoryProfilerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZJMemoryProfilerDemo;
+			};
+			name = Debug;
+		};
+		A71A94111D1AE81100358F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZJMemoryProfilerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.melody.ZJMemoryProfilerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZJMemoryProfilerDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A71A93D71D1AE81100358F25 /* Build configuration list for PBXProject "ZJMemoryProfilerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71A94071D1AE81100358F25 /* Debug */,
+				A71A94081D1AE81100358F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A71A94091D1AE81100358F25 /* Build configuration list for PBXNativeTarget "ZJMemoryProfilerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71A940A1D1AE81100358F25 /* Debug */,
+				A71A940B1D1AE81100358F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A71A940C1D1AE81100358F25 /* Build configuration list for PBXNativeTarget "ZJMemoryProfilerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71A940D1D1AE81100358F25 /* Debug */,
+				A71A940E1D1AE81100358F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A71A940F1D1AE81100358F25 /* Build configuration list for PBXNativeTarget "ZJMemoryProfilerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71A94101D1AE81100358F25 /* Debug */,
+				A71A94111D1AE81100358F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A71A93D41D1AE81100358F25 /* Project object */;
+}
