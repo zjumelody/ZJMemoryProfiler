@@ -14,12 +14,13 @@
 		A71A93EF1D1AE81100358F25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A93ED1D1AE81100358F25 /* LaunchScreen.storyboard */; };
 		A71A93FA1D1AE81100358F25 /* ZJMemoryProfilerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A93F91D1AE81100358F25 /* ZJMemoryProfilerDemoTests.m */; };
 		A71A94051D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A94041D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.m */; };
-		A71A94151D1AEBB800358F25 /* ZJMemoryProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A94141D1AEBB800358F25 /* ZJMemoryProfiler.m */; };
-		A762A50A1D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A5091D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m */; };
-		A762A50D1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A50C1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m */; };
-		A762A5101D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A50F1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m */; };
 		A762A5131D1BDF5700D3C5A9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A5121D1BDF5700D3C5A9 /* SecondViewController.m */; };
 		A762A5161D1BE2D400D3C5A9 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A762A5151D1BE2D400D3C5A9 /* ThirdViewController.m */; };
+		A7F219401D25274400FAC308 /* ZJMemoryProfiler.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7F219391D25274400FAC308 /* ZJMemoryProfiler.mm */; };
+		A7F219411D25274400FAC308 /* ZJMemoryProfilerContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2193B1D25274400FAC308 /* ZJMemoryProfilerContainerViewController.m */; };
+		A7F219421D25274400FAC308 /* ZJMemoryProfilerFloatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2193D1D25274400FAC308 /* ZJMemoryProfilerFloatingViewController.m */; };
+		A7F219431D25274400FAC308 /* ZJMemoryProfilerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2193F1D25274400FAC308 /* ZJMemoryProfilerWindow.m */; };
+		A7F219461D25282900FAC308 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F219451D25282900FAC308 /* BaseViewController.m */; };
 		BE4D60FEB027746CCF336481 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C536545F7B934A9EABB70693 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,18 +58,20 @@
 		A71A94001D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJMemoryProfilerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A94041D1AE81100358F25 /* ZJMemoryProfilerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerDemoUITests.m; sourceTree = "<group>"; };
 		A71A94061D1AE81100358F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A71A94131D1AEBB800358F25 /* ZJMemoryProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfiler.h; sourceTree = "<group>"; };
-		A71A94141D1AEBB800358F25 /* ZJMemoryProfiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfiler.m; sourceTree = "<group>"; };
-		A762A5081D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfilerWindow.h; sourceTree = "<group>"; };
-		A762A5091D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerWindow.m; sourceTree = "<group>"; };
-		A762A50B1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfilerContainerViewController.h; sourceTree = "<group>"; };
-		A762A50C1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerContainerViewController.m; sourceTree = "<group>"; };
-		A762A50E1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfilerFloatingViewController.h; sourceTree = "<group>"; };
-		A762A50F1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerFloatingViewController.m; sourceTree = "<group>"; };
 		A762A5111D1BDF5700D3C5A9 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		A762A5121D1BDF5700D3C5A9 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		A762A5141D1BE2D400D3C5A9 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		A762A5151D1BE2D400D3C5A9 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		A7F219381D25274400FAC308 /* ZJMemoryProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfiler.h; sourceTree = "<group>"; };
+		A7F219391D25274400FAC308 /* ZJMemoryProfiler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZJMemoryProfiler.mm; sourceTree = "<group>"; };
+		A7F2193A1D25274400FAC308 /* ZJMemoryProfilerContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfilerContainerViewController.h; sourceTree = "<group>"; };
+		A7F2193B1D25274400FAC308 /* ZJMemoryProfilerContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerContainerViewController.m; sourceTree = "<group>"; };
+		A7F2193C1D25274400FAC308 /* ZJMemoryProfilerFloatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfilerFloatingViewController.h; sourceTree = "<group>"; };
+		A7F2193D1D25274400FAC308 /* ZJMemoryProfilerFloatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerFloatingViewController.m; sourceTree = "<group>"; };
+		A7F2193E1D25274400FAC308 /* ZJMemoryProfilerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMemoryProfilerWindow.h; sourceTree = "<group>"; };
+		A7F2193F1D25274400FAC308 /* ZJMemoryProfilerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMemoryProfilerWindow.m; sourceTree = "<group>"; };
+		A7F219441D25282900FAC308 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		A7F219451D25282900FAC308 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		BB829C83EAC151A40B9B5B0F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C536545F7B934A9EABB70693 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -143,6 +146,8 @@
 			children = (
 				A71A93E21D1AE81100358F25 /* AppDelegate.h */,
 				A71A93E31D1AE81100358F25 /* AppDelegate.m */,
+				A7F219441D25282900FAC308 /* BaseViewController.h */,
+				A7F219451D25282900FAC308 /* BaseViewController.m */,
 				A71A93E51D1AE81100358F25 /* FirstViewController.h */,
 				A71A93E61D1AE81100358F25 /* FirstViewController.m */,
 				A762A5111D1BDF5700D3C5A9 /* SecondViewController.h */,
@@ -187,14 +192,14 @@
 		A71A94121D1AEBAA00358F25 /* ZJMemoryProfiler */ = {
 			isa = PBXGroup;
 			children = (
-				A71A94131D1AEBB800358F25 /* ZJMemoryProfiler.h */,
-				A71A94141D1AEBB800358F25 /* ZJMemoryProfiler.m */,
-				A762A5081D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.h */,
-				A762A5091D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m */,
-				A762A50B1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.h */,
-				A762A50C1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m */,
-				A762A50E1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.h */,
-				A762A50F1D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m */,
+				A7F219381D25274400FAC308 /* ZJMemoryProfiler.h */,
+				A7F219391D25274400FAC308 /* ZJMemoryProfiler.mm */,
+				A7F2193A1D25274400FAC308 /* ZJMemoryProfilerContainerViewController.h */,
+				A7F2193B1D25274400FAC308 /* ZJMemoryProfilerContainerViewController.m */,
+				A7F2193C1D25274400FAC308 /* ZJMemoryProfilerFloatingViewController.h */,
+				A7F2193D1D25274400FAC308 /* ZJMemoryProfilerFloatingViewController.m */,
+				A7F2193E1D25274400FAC308 /* ZJMemoryProfilerWindow.h */,
+				A7F2193F1D25274400FAC308 /* ZJMemoryProfilerWindow.m */,
 			);
 			name = ZJMemoryProfiler;
 			path = ../../ZJMemoryProfiler;
@@ -364,15 +369,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F219431D25274400FAC308 /* ZJMemoryProfilerWindow.m in Sources */,
+				A7F219461D25282900FAC308 /* BaseViewController.m in Sources */,
 				A71A93E71D1AE81100358F25 /* FirstViewController.m in Sources */,
-				A71A94151D1AEBB800358F25 /* ZJMemoryProfiler.m in Sources */,
-				A762A50D1D1B997B00D3C5A9 /* ZJMemoryProfilerContainerViewController.m in Sources */,
-				A762A50A1D1B81E400D3C5A9 /* ZJMemoryProfilerWindow.m in Sources */,
+				A7F219401D25274400FAC308 /* ZJMemoryProfiler.mm in Sources */,
 				A762A5131D1BDF5700D3C5A9 /* SecondViewController.m in Sources */,
 				A762A5161D1BE2D400D3C5A9 /* ThirdViewController.m in Sources */,
 				A71A93E41D1AE81100358F25 /* AppDelegate.m in Sources */,
-				A762A5101D1BAC4600D3C5A9 /* ZJMemoryProfilerFloatingViewController.m in Sources */,
 				A71A93E11D1AE81100358F25 /* main.m in Sources */,
+				A7F219421D25274400FAC308 /* ZJMemoryProfilerFloatingViewController.m in Sources */,
+				A7F219411D25274400FAC308 /* ZJMemoryProfilerContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

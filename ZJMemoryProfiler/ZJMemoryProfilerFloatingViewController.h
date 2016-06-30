@@ -11,14 +11,18 @@
 #import <FBMemoryProfiler/FBMemoryProfilerPluggable.h>
 #import <FBRetainCycleDetector/FBObjectGraphConfiguration.h>
 
-typedef void(^ZJMemoryProfilerFloatingViewTapAction)();
+typedef void(^ZJMemoryProfilerFloatingViewTapAction)(NSInteger times);
 
 @interface ZJMemoryProfilerFloatingViewController : UIViewController
 
 @property(nonatomic, strong) UILabel *infoLabel;
 @property(nonatomic, copy) ZJMemoryProfilerFloatingViewTapAction tapAction;
 
+@property(nonatomic, assign) NSInteger autoCheckIntervalSeconds;
+
 - (instancetype)initWithPlugins:(NSArray<id<FBMemoryProfilerPluggable>> *)plugins
 retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetectorConfiguration;
+
+- (void)updateTopVCInfo;
 
 @end

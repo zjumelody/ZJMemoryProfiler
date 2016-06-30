@@ -31,6 +31,8 @@ FOUNDATION_EXPORT const unsigned char ZJMemoryProfilerVersionString[];
 
 @interface ZJMemoryProfiler : NSObject
 
++ (nullable instancetype)sharedProfiler;
+
 /**
  Designated initializer
  @param plugins Plugins can take up some behavior like cache cleaning when we are working with profiler.
@@ -48,5 +50,12 @@ FOUNDATION_EXPORT const unsigned char ZJMemoryProfilerVersionString[];
 @property (nonatomic, assign, getter=isEnabled) BOOL enabled;
 
 @property(nonatomic, assign) CGPoint lastFloatingCenter;
+
+@property(nonatomic, strong, nullable) NSArray<id<FBMemoryProfilerPluggable>> *fbPlugins;
+@property(nonatomic, strong, nullable) FBObjectGraphConfiguration     *retainCycleDetectorConfiguration;
+
+- (void)updateTopVCInfo;
+
+@property(nonatomic, assign) NSInteger autoCheckIntervalSeconds;
 
 @end

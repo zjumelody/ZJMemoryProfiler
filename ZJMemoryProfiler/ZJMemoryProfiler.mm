@@ -18,8 +18,6 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
 
 @interface ZJMemoryProfiler () <ZJMemoryProfilerWindowTouchesDelegate>
 {
-    NSArray<id<FBMemoryProfilerPluggable>> *fbPlugins;
-    FBObjectGraphConfiguration      *_retainCycleDetectorConfiguration;
     FBMemoryProfiler    *fbMemoryProfiler;
     ZJMemoryProfilerContainerViewController     *_containerViewController;
     ZJMemoryProfilerFloatingViewController      *_floatingViewController;
@@ -31,6 +29,18 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
 
 @implementation ZJMemoryProfiler
 
++ (nullable instancetype)sharedProfiler
+{
+    static ZJMemoryProfiler *sharedProfiler = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedProfiler = [ZJMemoryProfiler new];
+        sharedProfiler.lastFloatingCenter = CGPointMake(CGRectGetWidth([UIScreen mainScreen].bounds)/2+60, kZJFloatingViewHeight);
+        sharedProfiler.autoCheckIntervalSeconds = 0;
+    });
+    return sharedProfiler;
+}
+
 - (instancetype)init
 {
     return [self initWithPlugins:nil retainCycleDetectorConfiguration:nil];
@@ -39,13 +49,13 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
 - (instancetype)initWithPlugins:(NSArray<id<FBMemoryProfilerPluggable>> *)plugins retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetectorConfiguration
 {
     if (self = [super init]) {
-        fbPlugins = plugins;
+        _fbPlugins = plugins;
         _retainCycleDetectorConfiguration = retainCycleDetectorConfiguration;
         self.lastFloatingCenter = CGPointMake(CGRectGetWidth([UIScreen mainScreen].bounds)/2+60, kZJFloatingViewHeight);
     }
     
     return self;
-}
+} 
 
 - (void)enable
 {
@@ -64,7 +74,7 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
         fbMemoryProfiler = nil;
     }
     
-    fbMemoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:fbPlugins
+    fbMemoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:_fbPlugins
                                 retainCycleDetectorConfiguration:_retainCycleDetectorConfiguration];
     [fbMemoryProfiler addObserver:self forKeyPath:@"presentationMode"
                           options:NSKeyValueObservingOptionNew context:nil];
@@ -78,6 +88,13 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
     _memoryProfilerWindow = nil;
     
     _enabled = NO;
+}
+
+#pragma mark -
+
+- (void)updateTopVCInfo
+{
+    [_floatingViewController updateTopVCInfo];
 }
 
 #pragma mark -
@@ -105,11 +122,15 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
     if (_floatingViewController) {
         [self hideFloatingView];
     }
-    _floatingViewController = [[ZJMemoryProfilerFloatingViewController alloc] initWithPlugins:fbPlugins
+    _floatingViewController = [[ZJMemoryProfilerFloatingViewController alloc] initWithPlugins:_fbPlugins
                                                              retainCycleDetectorConfiguration:_retainCycleDetectorConfiguration];
+    
+    _floatingViewController.autoCheckIntervalSeconds = _autoCheckIntervalSeconds;
     __weak typeof(self) wself = self;
-    _floatingViewController.tapAction = ^() {
-        [wself floatingViewControllerTapAction];
+    _floatingViewController.tapAction = ^(NSInteger times) {
+        if (times == 2) {
+            [wself floatingViewControllerTapAction];
+        }
     };
     
     [_containerViewController presentViewController:_floatingViewController

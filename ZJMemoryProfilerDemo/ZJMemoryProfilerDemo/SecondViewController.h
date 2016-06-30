@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Melody. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : BaseViewController
 
 @end

@@ -7,10 +7,12 @@
 //
 
 #import "AppDelegate.h"
+
 #import "ZJMemoryProfiler.h"
 #import "FirstViewController.h"
-
 #import <FBRetainCycleDetector/FBStandardGraphEdgeFilters.h>
+
+//#import <FBRetainCycleDetector/FBStandardGraphEdgeFilters.h>
 
 @interface AppDelegate ()
 {
@@ -26,18 +28,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    /*
-     //if you want to do some filters and configurations, you could do like this:
-     //(for details: https://github.com/facebook/FBRetainCycleDetector )
-     
-    NSArray *filters = @[FBFilterBlockWithObjectIvarRelation([UIView class], @"_subviewCache")];
-    FBObjectGraphConfiguration *configuration = [[FBObjectGraphConfiguration alloc] initWithFilterBlocks:filters
-                                                                                     shouldInspectTimers:NO];
-    memoryProfiler = [[ZJMemoryProfiler alloc] initWithPlugins:filters
-                              retainCycleDetectorConfiguration:configuration];
-    */
-    memoryProfiler = [[ZJMemoryProfiler alloc] init];
-    [memoryProfiler enable];
+    [self setupMemoryProfiler];
     
     firstViewController = [[FirstViewController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:firstViewController];
@@ -46,6 +37,20 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)setupMemoryProfiler
+{
+    // (for details: https://github.com/facebook/FBRetainCycleDetector )
+    NSArray *filters = @[FBFilterBlockWithObjectIvarRelation([UIView class], @"_subviewCache")];
+    FBObjectGraphConfiguration *configuration = [[FBObjectGraphConfiguration alloc] initWithFilterBlocks:filters
+                                                                                     shouldInspectTimers:NO];
+    
+    memoryProfiler = [ZJMemoryProfiler sharedProfiler];
+    memoryProfiler.fbPlugins = filters;
+    memoryProfiler.retainCycleDetectorConfiguration = configuration;
+    memoryProfiler.autoCheckIntervalSeconds = 5;
+    [memoryProfiler enable];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
