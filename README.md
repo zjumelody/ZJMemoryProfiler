@@ -63,7 +63,7 @@ memoryProfiler.retainCycleDetectorConfiguration = configuration;
 [memoryProfiler enable];
 ```
 
-We can also add an interval time to check memory automatic.
+We can also add an interval time to check memory automatically.
 
 ```objc
 memoryProfiler.autoCheckIntervalSeconds = 5;
