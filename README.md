@@ -46,6 +46,17 @@ ZJMemoryProfiler *memoryProfiler = [ZJMemoryProfiler sharedProfiler];
 _memoryProfiler = memoryProfiler;
 ```
 
+Add method to get viewControlls witch you want to browse:
+
+```objc
+#import <ZJMemoryProfiler/ZJMemoryProfiler.h>
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[ZJMemoryProfiler sharedProfiler] updateViewControllerInfo:self];
+}
+```
+
 `ZJMemoryProfiler` will show up as a view on the screen. Once tapped, it will recheck the memory usage of current viewController. Double tapped, it will open FBMemoryProfiler in full size mode.
 
 We can also define plugins (check below) and [filters for retain cycle detector](https://github.com/facebook/FBRetainCycleDetector#filters), that we pass to configuration.
