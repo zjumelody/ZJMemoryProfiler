@@ -1,6 +1,6 @@
 # ZJMemoryProfiler
 
-An memory tool for easy browsing viewControllers in memory over time, using [FBMemoryProfiler](https://github.com/facebook/FBMemoryProfiler) and [FBAllocationTracker](https://github.com/facebook/FBAllocationTracker) and [FBRetainCycleDetector](https://github.com/facebook/FBRetainCycleDetector).
+A memory tool for easy browsing viewControllers in memory over time, using [FBMemoryProfiler](https://github.com/facebook/FBMemoryProfiler) and [FBAllocationTracker](https://github.com/facebook/FBAllocationTracker) and [FBRetainCycleDetector](https://github.com/facebook/FBRetainCycleDetector).
 
 ## About
 
