@@ -29,15 +29,17 @@
     NSString    *topVCMemory;
     NSString    *lastTopVCName;
     
+    UIViewController *currentViewController;
+    
     NSInteger   autoProfilerCount;
     
     NSByteCountFormatter *_byteCountFormatter;
     
-    BOOL    needToRecheckTopVC;
+    BOOL    needToRecheckVC;
 }
 
 @property(nonatomic, assign) BOOL hasALeak;
-@property(nonatomic, assign) BOOL isCheckingTopVC;
+@property(nonatomic, assign) BOOL isCheckingVC;
 @property(nonatomic, strong) FBAllocationTrackerSummary *currentSummary;
 
 @end
@@ -67,12 +69,14 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
     self.view.alpha = 0.8f;
     
     _hasALeak = NO;
-    _isCheckingTopVC = NO;
-    needToRecheckTopVC = NO;
+    _isCheckingVC = NO;
+    needToRecheckVC = NO;
     autoProfilerCount = 0;
     
     topVCMemory = @"-";
     lastTopVCName = nil;
+    
+    currentViewController = nil;
     
     _byteCountFormatter = [NSByteCountFormatter new];
     
@@ -150,15 +154,15 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
     });
     
     autoProfilerCount++;
-    if (_isCheckingTopVC) {
+    if (_isCheckingVC) {
         autoProfilerCount = 0;
     }
-    else if (needToRecheckTopVC ||
+    else if (needToRecheckVC ||
              (_autoCheckIntervalSeconds > 0 && autoProfilerCount >= _autoCheckIntervalSeconds) ||
              ([topVCMemory isEqualToString:@"-"] || [topVCMemory isEqualToString:@"..."])) {
         
-        needToRecheckTopVC = NO;
-        [self checkTopVC];
+        needToRecheckVC = NO;
+        [self checkViewController:currentViewController];
     }
 }
 
@@ -199,7 +203,7 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
     NSInteger length = infoString.length - location;
     if (infoString.length > location && length > 0) {
         UIColor *color = [UIColor whiteColor];
-        if (!_isCheckingTopVC && ![topVCMemory isEqualToString:@"-"] && ![topVCMemory isEqualToString:@"..."]) {
+        if (_enableCheckRetainCycles && !_isCheckingVC && ![topVCMemory isEqualToString:@"-"] && ![topVCMemory isEqualToString:@"..."]) {
             color = _hasALeak ? [UIColor redColor] : [UIColor greenColor];
         }
         [attributedText addAttribute:NSForegroundColorAttributeName
@@ -209,16 +213,20 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
     _infoLabel.attributedText = attributedText;
 }
 
-- (void)checkTopVC
+- (void)checkViewController:(UIViewController *)viewController
 {
-    if (_isCheckingTopVC ||
+    if (!viewController) {
+        return;
+    }
+    
+    if (_isCheckingVC ||
         ![[FBAllocationTrackerManager sharedManager] isAllocationTrackerEnabled]) {
-        needToRecheckTopVC = YES;
+        needToRecheckVC = YES;
         return;
     }
     
     autoProfilerCount = 0;
-    _isCheckingTopVC = YES;
+    _isCheckingVC = YES;
     _hasALeak = NO;
     topVCMemory = @"...";
     [self performSelectorOnMainThread:@selector(updateInfoLabel) withObject:nil waitUntilDone:YES];
@@ -233,7 +241,7 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
             for (int i = 0; i < summaryData.count; i++) {
                 NSArray *array = summaryData[i];
                 for (FBAllocationTrackerSummary * summary in array) {
-                    if ([summary.className isEqualToString:NSStringFromClass([[self currentViewController] class])]) {
+                    if ([summary.className isEqualToString:NSStringFromClass([viewController class])]) {
                         wself.currentSummary = summary;
                         break;
                     }
@@ -244,7 +252,7 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
             }
             if (wself.currentSummary) {
 //                if ([wself.currentSummary.className isEqualToString:@"UIAlertController"]) {
-//                    wself.isCheckingTopVC = NO;
+//                    wself.isCheckingVC = NO;
 //                    return;
 //                }
 //                else {
@@ -254,14 +262,14 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
 //                }
             }
             else {
-                wself.isCheckingTopVC = NO;
+                wself.isCheckingVC = NO;
                 topVCMemory = @"-";
                 [wself updateInfoLabel];
             }
         });
     }
     else {
-        _isCheckingTopVC = NO;
+        _isCheckingVC = NO;
         topVCMemory = @"-";
         [self updateInfoLabel];
     }
@@ -288,15 +296,20 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
     [string appendFormat:@" (%ld)", (long)alive];
     topVCMemory = string;
     
-    [self updateInfoLabel];
-    
-    if (_currentSummary.className) {
+    if (_enableCheckRetainCycles && _currentSummary.className) {
+        [self updateInfoLabel];
+        
 //        NSLog(@"%@", _currentSummary.className);
         [self findRetainCyclesForClassName:_currentSummary.className];
     }
-    else {
-        _isCheckingTopVC = NO;
+    else if (_enableCheckRetainCycles && !_currentSummary.className) {
+        _isCheckingVC = NO;
         topVCMemory = @"-";
+        [self updateInfoLabel];
+
+    }
+    else {
+        _isCheckingVC = NO;
         [self updateInfoLabel];
     }
 }
@@ -323,7 +336,7 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
             }
         }
         
-        if ([className isEqualToString:NSStringFromClass([[self currentViewController] class])]) {
+        if ([className isEqualToString:NSStringFromClass([currentViewController class])]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([retainCycles count] > 0) {
                     // We've got a leak
@@ -332,13 +345,13 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
                 else {
                     wself.hasALeak = NO;
                 }
-                wself.isCheckingTopVC = NO;
+                wself.isCheckingVC = NO;
                 [wself updateInfoLabelStatus];
             });
         }
         else {
-            wself.isCheckingTopVC = NO;
-            [wself checkTopVC];
+            wself.isCheckingVC = NO;
+            [wself checkViewController:currentViewController];
         }
     });
 }
@@ -347,7 +360,7 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
 
 - (void)onceTapGestureRecognizer:(id)sender
 {
-    [self checkTopVC];
+    [self checkViewController:currentViewController];
     
     if (_tapAction) {
         _tapAction(1);
@@ -361,13 +374,24 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
     }
 }
 
+- (void)updateViewControllerInfo:(UIViewController *)viewController
+{
+    _hasALeak = NO;
+    topVCMemory = @"...";
+    [self performSelectorOnMainThread:@selector(updateInfoLabel) withObject:nil waitUntilDone:YES];
+    
+    currentViewController = viewController;
+    [self checkViewController:currentViewController];
+}
+
 - (void)updateTopVCInfo
 {
     _hasALeak = NO;
     topVCMemory = @"...";
     [self performSelectorOnMainThread:@selector(updateInfoLabel) withObject:nil waitUntilDone:YES];
     
-    [self checkTopVC];
+    currentViewController = [self currentViewController];
+    [self checkViewController:currentViewController];
 }
 
 #pragma mark - others

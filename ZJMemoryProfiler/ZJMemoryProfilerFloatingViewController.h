@@ -20,9 +20,12 @@ typedef void(^ZJMemoryProfilerFloatingViewTapAction)(NSInteger times);
 
 @property(nonatomic, assign) NSInteger autoCheckIntervalSeconds;
 
+@property(nonatomic, assign) BOOL enableCheckRetainCycles;
+
 - (instancetype)initWithPlugins:(NSArray<id<FBMemoryProfilerPluggable>> *)plugins
 retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetectorConfiguration;
 
+- (void)updateViewControllerInfo:(UIViewController *)viewController;
 - (void)updateTopVCInfo;
 
 @end

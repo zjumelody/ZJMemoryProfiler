@@ -47,6 +47,7 @@
                                                                                      shouldInspectTimers:NO];
     
     memoryProfiler = [ZJMemoryProfiler sharedProfiler];
+    memoryProfiler.enableCheckRetainCycles = YES;
     memoryProfiler.fbPlugins = filters;
     memoryProfiler.retainCycleDetectorConfiguration = configuration;
     memoryProfiler.autoCheckIntervalSeconds = 5;

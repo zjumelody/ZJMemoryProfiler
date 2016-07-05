@@ -37,6 +37,7 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
         sharedProfiler = [ZJMemoryProfiler new];
         sharedProfiler.lastFloatingCenter = CGPointMake(CGRectGetWidth([UIScreen mainScreen].bounds)/2+60, kZJFloatingViewHeight);
         sharedProfiler.autoCheckIntervalSeconds = 0;
+        sharedProfiler.enableCheckRetainCycles = NO;
     });
     return sharedProfiler;
 }
@@ -92,6 +93,11 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
 
 #pragma mark -
 
+- (void)updateViewControllerInfo:(UIViewController *)viewController
+{
+    [_floatingViewController updateViewControllerInfo:viewController];
+}
+
 - (void)updateTopVCInfo
 {
     [_floatingViewController updateTopVCInfo];
@@ -126,6 +132,7 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
                                                              retainCycleDetectorConfiguration:_retainCycleDetectorConfiguration];
     
     _floatingViewController.autoCheckIntervalSeconds = _autoCheckIntervalSeconds;
+    _floatingViewController.enableCheckRetainCycles = _enableCheckRetainCycles;
     __weak typeof(self) wself = self;
     _floatingViewController.tapAction = ^(NSInteger times) {
         if (times == 2) {

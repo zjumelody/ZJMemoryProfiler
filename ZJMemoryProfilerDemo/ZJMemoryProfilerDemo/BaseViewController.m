@@ -29,7 +29,7 @@
 {
     [super viewDidAppear:animated];
     
-    [[ZJMemoryProfiler sharedProfiler] updateTopVCInfo];
+    [[ZJMemoryProfiler sharedProfiler] updateViewControllerInfo:self];
 }
 
 @end

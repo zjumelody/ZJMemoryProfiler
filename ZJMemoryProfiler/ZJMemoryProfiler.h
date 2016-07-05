@@ -54,6 +54,9 @@ FOUNDATION_EXPORT const unsigned char ZJMemoryProfilerVersionString[];
 @property(nonatomic, strong, nullable) NSArray<id<FBMemoryProfilerPluggable>> *fbPlugins;
 @property(nonatomic, strong, nullable) FBObjectGraphConfiguration     *retainCycleDetectorConfiguration;
 
+@property(nonatomic, assign) BOOL enableCheckRetainCycles;
+
+- (void)updateViewControllerInfo:(nonnull UIViewController *)viewController;
 - (void)updateTopVCInfo;
 
 @property(nonatomic, assign) NSInteger autoCheckIntervalSeconds;
