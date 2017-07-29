@@ -125,34 +125,37 @@ static const NSUInteger kZJFloatingViewHeight = 24.0;
 
 - (void)showFloatingView
 {
-    if (_floatingViewController) {
-        [self hideFloatingView];
+    //    if (_floatingViewController) {
+    //        [self hideFloatingView];
+    //    }
+    
+    if (!_floatingViewController) {
+        _floatingViewController = [[ZJMemoryProfilerFloatingViewController alloc] initWithPlugins:_fbPlugins
+                                                                 retainCycleDetectorConfiguration:_retainCycleDetectorConfiguration];
+        
+        _floatingViewController.autoCheckIntervalSeconds = _autoCheckIntervalSeconds;
+        _floatingViewController.enableCheckRetainCycles = _enableCheckRetainCycles;
+        __weak typeof(self) wself = self;
+        _floatingViewController.tapAction = ^(NSInteger times) {
+            if (times == 2) {
+                [wself floatingViewControllerTapAction];
+            }
+        };
+        
+        [_containerViewController presentViewController:_floatingViewController
+                                               withSize:CGSizeMake(kZJFloatingViewHeight,
+                                                                   kZJFloatingViewHeight)];
+        
+        _floatingViewController.view.center = _lastFloatingCenter;
     }
-    _floatingViewController = [[ZJMemoryProfilerFloatingViewController alloc] initWithPlugins:_fbPlugins
-                                                             retainCycleDetectorConfiguration:_retainCycleDetectorConfiguration];
-    
-    _floatingViewController.autoCheckIntervalSeconds = _autoCheckIntervalSeconds;
-    _floatingViewController.enableCheckRetainCycles = _enableCheckRetainCycles;
-    __weak typeof(self) wself = self;
-    _floatingViewController.tapAction = ^(NSInteger times) {
-        if (times == 2) {
-            [wself floatingViewControllerTapAction];
-        }
-    };
-    
-    [_containerViewController presentViewController:_floatingViewController
-                                           withSize:CGSizeMake(kZJFloatingViewHeight,
-                                                               kZJFloatingViewHeight)];
-    
-    _floatingViewController.view.center = _lastFloatingCenter;
 }
 
 - (void)hideFloatingView
 {
     _lastFloatingCenter = _floatingViewController.view.center;
     
-    [_containerViewController dismissCurrentViewController];
-    _floatingViewController = nil;
+    //    [_containerViewController dismissCurrentViewController];
+    //    _floatingViewController = nil;
 }
 
 #pragma mark - ZJMemoryProfilerWindowTouchesDelegate
